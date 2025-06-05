@@ -1,0 +1,116 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema db_telesalud_btemp1_1_3
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema db_telesalud_btemp1_1_3
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `db_telesalud_btemp1_1_3` DEFAULT CHARACTER SET utf8 ;
+USE `db_telesalud_btemp1_1_3` ;
+
+-- -----------------------------------------------------
+-- Table `db_telesalud_btemp1_1_3`.`tbl_especialidad`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_telesalud_btemp1_1_3`.`tbl_especialidad` (
+  `id_especialidad` INT NOT NULL AUTO_INCREMENT,
+  `espad_nombre` VARCHAR(50) NULL,
+  `espad_descripcion` VARCHAR(200) NULL,
+  PRIMARY KEY (`id_especialidad`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db_telesalud_btemp1_1_3`.`tbl_especialista`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_telesalud_btemp1_1_3`.`tbl_especialista` (
+  `id_especialista` INT NOT NULL AUTO_INCREMENT,
+  `espta_nombres` VARCHAR(50) NULL,
+  `espta_appaterno` VARCHAR(45) NULL,
+  `espta_apmaterno` VARCHAR(45) NULL,
+  `espta_correo` VARCHAR(45) NULL,
+  `espta_contrasena` VARCHAR(50) NULL,
+  `espta_descripcion` VARCHAR(200) NULL,
+  `tbl_especialidad_id_especialidad` INT NOT NULL,
+  PRIMARY KEY (`id_especialista`),
+  INDEX `fk_tbl_especialista_tbl_especialidad_idx` (`tbl_especialidad_id_especialidad` ASC) VISIBLE,
+  CONSTRAINT `fk_tbl_especialista_tbl_especialidad`
+    FOREIGN KEY (`tbl_especialidad_id_especialidad`)
+    REFERENCES `db_telesalud_btemp1_1_3`.`tbl_especialidad` (`id_especialidad`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db_telesalud_btemp1_1_3`.`tbl_receta`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_telesalud_btemp1_1_3`.`tbl_receta` (
+  `id_receta` INT NOT NULL AUTO_INCREMENT,
+  `receta_fecha` DATE NULL,
+  `receta_hora` TIME NULL,
+  `receta_diagnostico` VARCHAR(1000) NULL,
+  `receta_observaciones` VARCHAR(500) NULL,
+  `receta_medicamentos` VARCHAR(200) NULL,
+  `receta_indicaciones` VARCHAR(500) NULL,
+  PRIMARY KEY (`id_receta`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db_telesalud_btemp1_1_3`.`tbl_cita`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_telesalud_btemp1_1_3`.`tbl_cita` (
+  `id_cita` INT NOT NULL AUTO_INCREMENT,
+  `cit_especialidad` VARCHAR(50) NULL,
+  `cit_mednom` VARCHAR(250) NULL,
+  `cit_fecha` DATE NULL,
+  `cit_hora` TIME NULL,
+  `cit_motivoconsulta` VARCHAR(200) NULL,
+  `tbl_especialista_id_especialista` INT NOT NULL,
+  `tbl_receta_id_receta` INT NOT NULL,
+  PRIMARY KEY (`id_cita`),
+  INDEX `fk_tbl_cita_tbl_especialista1_idx` (`tbl_especialista_id_especialista` ASC) VISIBLE,
+  INDEX `fk_tbl_cita_tbl_receta1_idx` (`tbl_receta_id_receta` ASC) VISIBLE,
+  CONSTRAINT `fk_tbl_cita_tbl_especialista1`
+    FOREIGN KEY (`tbl_especialista_id_especialista`)
+    REFERENCES `db_telesalud_btemp1_1_3`.`tbl_especialista` (`id_especialista`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_cita_tbl_receta1`
+    FOREIGN KEY (`tbl_receta_id_receta`)
+    REFERENCES `db_telesalud_btemp1_1_3`.`tbl_receta` (`id_receta`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db_telesalud_btemp1_1_3`.`tbl_paciente`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db_telesalud_btemp1_1_3`.`tbl_paciente` (
+  `id_paciente` INT NOT NULL AUTO_INCREMENT,
+  `pac_nombres` VARCHAR(50) NULL,
+  `pac_appaterno` VARCHAR(45) NULL,
+  `pac_apmaterno` VARCHAR(45) NULL,
+  `pac_correo` VARCHAR(45) NULL,
+  `pac_contrasena` VARCHAR(50) NULL,
+  `tbl_especialidad_id_especialidad` INT NOT NULL,
+  PRIMARY KEY (`id_paciente`),
+  INDEX `fk_tbl_paciente_tbl_especialidad1_idx` (`tbl_especialidad_id_especialidad` ASC) VISIBLE,
+  CONSTRAINT `fk_tbl_paciente_tbl_especialidad1`
+    FOREIGN KEY (`tbl_especialidad_id_especialidad`)
+    REFERENCES `db_telesalud_btemp1_1_3`.`tbl_especialidad` (`id_especialidad`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

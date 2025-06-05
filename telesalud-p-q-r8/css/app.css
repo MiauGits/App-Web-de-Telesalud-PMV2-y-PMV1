@@ -1,0 +1,652 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+	font-size: 16px; /* 1rem = 10px */
+  margin: 0rem;
+  padding: 0rem;
+}
+
+*, h1, h2, h3, h4, a {
+  margin: 0rem;
+  padding: 0rem;
+}
+
+/*
+telefono: 480px;
+tablet: 768px;
+desktop: 992px;
+desktopXL: 1200px;
+*/
+
+/*
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.lato-thin-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.lato-light-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.lato-regular-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.lato-black-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+*/
+
+/* ===== General ===== */
+.contenedor {
+  width: 90%;
+  max-width: 150rem;
+  margin: 0 auto;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ===== Header ===== */
+.bg-header {
+  background-color: #007BFF;
+  height: 7rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.main-header {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-cont-general {
+  height: 100%;
+  display: contents;
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+.logo {
+  height: 6rem;
+}
+
+.title-header {
+  color: whitesmoke;
+}
+
+.links-header {
+  display: flex;
+}
+
+.btn-header {
+  margin-right: 1rem;
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 0.2rem;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-header:active,
+.btn-header:hover {
+  outline: 0;
+}
+
+.btn-header span {
+  background-color: rgb(5, 6, 45);
+  padding: 1rem 1rem;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.btn-header:hover span {
+  background: none;
+}
+
+.btn-header:active {
+  transform: scale(0.9);
+}
+
+.cont-hero {
+  display: flex;
+  justify-content: center;
+}
+
+.slider-frame {
+  margin: 4rem 0;
+}
+
+.img-banner {
+  width: 100%;
+  height: 70rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Body ===== */
+.sombra-a {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.especialidades, .tu-salud {
+  display: flex;
+  justify-content: center;
+}
+
+.cont-especialidades {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 3rem;
+  row-gap: 5rem;
+  margin-bottom: 6rem;
+}
+
+.img-especialidad {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.especialidad-box {
+  text-align: center;
+}
+
+.cont-fraccional {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 15rem;
+  margin: 4rem 10rem;
+}
+
+.img-fracional {
+  width: 50%;
+  object-fit: contain;margin: 0 25%;
+}
+
+.text-aling-center {
+  text-align: center;
+}
+
+.margin-5rem-0 {
+  margin: 1.3rem 0;
+}
+
+.bg-footer {
+  background-color: #007BFF;
+  height: 7rem;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.derechos {
+  text-align: center;
+}
+
+.centr {
+  height: 100%;
+  display: block;
+  align-content: center;
+}
+
+.titulo-espec {
+  margin: 3rem 0;
+}
+
+.cont-img-desc {
+  display: flex;
+}
+
+.img-espec {
+  height: 55rem;
+}
+
+.cont-desc {
+  margin-left: 3rem;
+}
+
+.cont-medicos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 4rem;
+  row-gap: 7rem;
+  margin-bottom: 6em;
+}
+
+/* ===== Estilos generales de CRUD ===== */
+
+.tituloh2 {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0rem;
+  font-size: 3rem;
+}
+
+.btn-crud1 {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #4CAF50;
+  height: 4.2rem;
+  padding: 1.2rem;
+  width: fit-content;
+  border-radius: 1rem;
+  margin: 1rem;
+  border: none;
+}
+
+.btn-crud1:hover {
+  background-color: #45A049;
+}
+
+.btn-crud2 {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #9370DB;
+  height: 4.2rem;
+  padding: 1.2rem;
+  width: fit-content;
+  border-radius: 1rem;
+  margin: 1rem;
+  border: none;
+}
+
+.btn-crud2:hover {
+  background-color: #7A5AC8;
+}
+
+.btn-crud3 {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #B39DDB;
+  height: 4.2rem;
+  padding: 1.2rem;
+  width: fit-content;
+  border-radius: 1rem;
+  margin: 1rem;
+  border: none;
+}
+
+.btn-crud3:hover {
+  background-color: #7A5AC8; /* pendiente */
+}
+
+.btn-crud2-max {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #9370DB;
+  height: 4.2rem;
+  padding: 1.2rem;
+  width: auto;
+  width: 80%;
+  border-radius: 1rem;
+  margin: 1rem;
+  border: none;
+  text-align: center
+}
+
+.btn-crud2-max:hover {
+  background-color: #7A5AC8;
+}
+
+.formulario p {
+  font-size: 1.4rem;
+  color: #333333;
+  margin: 2rem 0;
+}
+
+.formulario legend {
+  font-size: 2rem;
+  color: #333333;
+}
+
+.formulario label {
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+}
+
+.formulario input:not([type="submit"]),
+.formulario textarea,
+.formulario select {
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.formulario textarea {
+  height: 20rem;
+  resize: none;
+}
+
+.formulario .forma-contacto {
+  max-width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formulario input[type="radio"] {
+  margin: 0;
+  width: auto;
+}
+
+.nav-under-crud {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-index-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor-administrador {
+  width: 60rem;
+  margin: 0 auto;
+}
+
+/* Estilos de mensajes de error */
+.alerta {
+  padding: 0.5rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1rem 0rem;
+}
+
+.alerta.exito {
+  background-color: rgb(22, 190, 7);
+}
+
+.alerta.error {
+  background-color: rgb(190, 7, 7);
+}
+
+table.especialidades {
+  margin-top: 4rem;
+  width: 100%;
+  border-spacing: 0;
+}
+
+table.especialidades thead {
+  background-color: rgb(22, 190, 7);
+}
+
+table.especialidades thead th {
+  color: white;
+  padding: 2rem;
+}
+
+/* Corrección a talbas crud thead y tbody */
+
+table.especialidades {
+  display: table;
+  width: 100%;
+  border-spacing: 0;
+  margin-top: 4rem;
+}
+
+table.especialidades thead {
+  display: table-header-group;
+  background-color: rgb(22, 190, 7);
+}
+
+table.especialidades thead th {
+  color: white;
+  padding: 2rem;
+}
+
+table.especialidades tbody {
+  display: table-row-group;
+}
+
+table.especialidades td,
+table.especialidades th {
+  padding: 1rem;
+  text-align: left;
+}
+
+/* Linea por cada foreach */
+
+table.especialidades tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+table.especialidades tbody tr:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+table.especialidades {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4rem;
+}
+
+table.especialidades tbody tr:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+table.especialidades td {
+  padding: 1rem;
+}
+
+/* Fix centrar columnas en la tabla */
+table.especialidades th:nth-child(1),
+table.especialidades td:nth-child(1) {
+  text-align: center;
+}
+
+/* Centra la columna Acciones (4ta columna) */
+table.especialidades th:nth-child(4),
+table.especialidades td:nth-child(4) {
+  text-align: center;
+}
+
+/* Estilos a los botones de la tabla */
+.btn-editar,
+.btn-eliminar,
+.btn-crear,
+.btn-ver {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-editar {
+  background-color: #007bff; /* azul */
+}
+
+.btn-crear {
+  background-color: #24c431; /* azul */
+}
+
+.btn-ver {
+  background-color: #17c2c2; /* azul */
+}
+
+.btn-eliminar {
+  background-color: #dc3545; /* rojo */
+  border: none;
+  width: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.margen-temporal-carajo {
+  margin: 4rem 0rem;
+}
+
+/* USUARIO FINAL */
+
+.especialidades-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-especialidad {
+  background-color: #f0f8ff;
+  border-left: 5px solid #4a90e2;
+  padding: 1.3rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 0.3rem 0rem;
+}
+
+.card-especialidad:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nombre-especialidad {
+  font-size: 1.65rem; /* antes era 1.1rem → 1.1 × 1.5 = 1.65 */
+  color: #333;
+  font-weight: 600;
+}
+
+/* TABLA DE PREDICCIÓN */
+
+.tabla-container {
+  max-width: 1000px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+.tabla-telesalud {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-telesalud thead {
+  background-color: #4f46e5; /* Indigo */
+  color: #fff;
+}
+
+.tabla-telesalud th,
+.tabla-telesalud td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tabla-telesalud tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+@media (max-width: 600px) {
+  .tabla-telesalud th,
+  .tabla-telesalud td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+.margin-bottom-treerem {
+  margin-bottom: 3rem;
+}
+
+
+
